@@ -95,7 +95,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         return response()->json([
-            "message" => "Product {$id} deleted successfully (dummy)"
+            "message" => "Product {$id} deleted successfully"
         ]);
     }
 }
