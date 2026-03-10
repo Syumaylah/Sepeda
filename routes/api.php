@@ -11,3 +11,9 @@ Route::get('/user', function (Request $request) {
 Route::get('/ping', function () {
     return response()->json(['message' => 'pong']);
 });
+
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::post('/products', [ProductController::class, 'store']);
+
+
