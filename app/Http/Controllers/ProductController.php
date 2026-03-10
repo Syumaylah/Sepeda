@@ -47,6 +47,28 @@ class ProductController extends Controller
 
         return response()->json($product);
     }
+
+    public function store(Request $request)
+    {
+        try {
+            $validated = $request->validate([
+                'nama'     => 'required|string|max:100',
+                'kategori' => 'required|string|max:50',
+                'harga'    => 'required|numeric|min:0',
+                'stok'     => 'required|integer|min:0',
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $th) {
+            return response()->json([
+                "message" => "Validation failed",
+                "errors"  => $th->validator->errors()
+            ], 422);
+        }
+
+        return response()->json([
+            "message" => "Product created successfully",
+            "data"    => $validated
+        ], 201);
+    }
 }
 
 
