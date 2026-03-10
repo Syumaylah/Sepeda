@@ -69,6 +69,28 @@ class ProductController extends Controller
             "data"    => $validated
         ], 201);
     }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $validated = $request->validate([
+                'nama'     => 'sometimes|required|string|max:100',
+                'kategori' => 'sometimes|required|string|max:50',
+                'harga'    => 'sometimes|required|numeric|min:0',
+                'stok'     => 'sometimes|required|integer|min:0',
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $th) {
+            return response()->json([
+                "message" => "Validation failed",
+                "errors"  => $th->validator->errors()
+            ], 422);
+        }
+
+        return response()->json([
+            "message" => "Product {$id} updated successfully",
+            "data"    => array_merge(['id' => $id], $validated)
+        ]);
+    }
 }
 
-
+   
