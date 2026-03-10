@@ -91,6 +91,13 @@ class ProductController extends Controller
             "data"    => array_merge(['id' => $id], $validated)
         ]);
     }
+
+    public function destroy($id)
+    {
+        return response()->json([
+            "message" => "Product {$id} deleted successfully (dummy)"
+        ]);
+    }
 }
 
    
