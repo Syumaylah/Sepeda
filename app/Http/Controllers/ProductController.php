@@ -34,4 +34,17 @@ class ProductController extends Controller
 
         return response()->json($products);
     }
+
+    public function show($id)
+    {
+        $product = [
+            "id"       => $id,
+            "nama"     => "Sepeda MTB Polygon Siskiu T5",
+            "kategori" => "MTB",
+            "harga"    => 4500000,
+            "stok"     => 8,
+        ];
+
+        return response()->json($product);
+    }
 }
