@@ -5,9 +5,9 @@ Project ini dibuat sebagai studi kasus pembelajaran dalam memahami pembuatan API
 Anggota Kelompok
 
 Kelompok 2
-Saffana Nasywa Aurelya W. - 245150701111010
-Muna Fatinah Atiqoh - 245150707111033
-Syumaylah - 245150707111036
+- Saffana Nasywa Aurelya W. - 245150701111010
+- Muna Fatinah Atiqoh - 245150707111033
+- Syumaylah - 245150707111036
 
 Program Studi Teknologi Informasi
 Fakultas Ilmu Komputer
